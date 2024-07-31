@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ustermetrics.ecos4j.native" type="repository">
+    <properties maven-id="com.ustermetrics:ecos4j-native:1.0.4-2.0.10" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/ustermetrics/ecos4j-native/1.0.4-2.0.10/ecos4j-native-1.0.4-2.0.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
