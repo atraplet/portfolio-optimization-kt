@@ -189,6 +189,7 @@
       <root url="file://$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar" />
       <root url="file://$MAVEN_REPOSITORY$/guru/nidi/com/eclipsesource/j2v8/j2v8_win32_x86_64/4.6.0/j2v8_win32_x86_64-4.6.0.jar" />
       <root url="file://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/com/ustermetrics/ecos4j/2.0.1/ecos4j-2.0.1.jar" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -374,6 +375,7 @@
       <root url="file://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30-sources.jar" />
       <root url="file://$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30-sources.jar" />
       <root url="file://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30-sources.jar" />
+      <root url="file://$MAVEN_REPOSITORY$/com/ustermetrics/ecos4j/2.0.1/ecos4j-2.0.1-sources.jar" />
     </SOURCES>
   </library>
 </component>

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="ustermetrics.ecos4j" type="repository">
-    <properties maven-id="com.ustermetrics:ecos4j:2.0.0" />
+    <properties maven-id="com.ustermetrics:ecos4j:2.0.1" />
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/ustermetrics/ecos4j/2.0.0/ecos4j-2.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/ustermetrics/ecos4j/2.0.1/ecos4j-2.0.1.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar!/" />
