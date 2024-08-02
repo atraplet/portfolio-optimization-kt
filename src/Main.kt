@@ -24,7 +24,7 @@ fun main() {
     val sigmaLimit = 0.2
 
     // Problem dimension
-    val n = mu.getNumRows()
+    val n = mu.numRows
 
     // Compute Cholesky decomposition of sigma
     val chol = DecompositionFactory_DDRM.chol(n, true)
@@ -35,16 +35,16 @@ fun main() {
     // Define second-order cone program
     val cMat = mu.negative()
         .concatRows(SimpleMatrix(1, 1))
-    System.out.println("\ncMat")
+    println("\ncMat")
     cMat.print()
 
     val aMat = SimpleMatrix.ones(1, n)
         .concatColumns(SimpleMatrix(1, 1))
-    System.out.println("\naMat")
+    println("\naMat")
     aMat.print()
 
     val bMat = SimpleMatrix.ones(1, 1)
-    System.out.println("\nbMat")
+    println("\nbMat")
     bMat.print()
 
     val gMatPosOrt = SimpleMatrix.identity(n)
@@ -55,30 +55,30 @@ fun main() {
         .concatColumns(SimpleMatrix.filled(1, 1, -1.0))
         .concatRows(upTriMat.negative().concatColumns(SimpleMatrix(n, 1)))
     val gMat = gMatPosOrt.concatRows(gMatSoc)
-    System.out.println("\ngMat")
+    println("\ngMat")
     gMat.print()
 
     val hMat = SimpleMatrix(2 * n + 2, 1)
     hMat.set(n, 0, sigmaLimit)
-    System.out.println("\nhMat")
+    println("\nhMat")
     hMat.print()
 
     // ecos4j needs sparse aMat and gMat
     val tol = 1e-8
-    val aSpMat = DConvertMatrixStruct.convert(aMat.getDDRM(), null as DMatrixSparseCSC?, tol)
-    System.out.println("\naSpMat")
+    val aSpMat = DConvertMatrixStruct.convert(aMat.ddrm, null as DMatrixSparseCSC?, tol)
+    println("\naSpMat")
     aSpMat.print()
 
-    val gSpMat = DConvertMatrixStruct.convert(gMat.getDDRM(), null as DMatrixSparseCSC?, tol)
-    System.out.println("\ngSpMat")
+    val gSpMat = DConvertMatrixStruct.convert(gMat.ddrm, null as DMatrixSparseCSC?, tol)
+    println("\ngSpMat")
     gSpMat.print()
 
     Model().use {
         // Set up model
         it.setup(
             n + 1L, longArrayOf(n + 1L), 0, gSpMat.nz_values, toLongArray(gSpMat.col_idx),
-            toLongArray(gSpMat.nz_rows), cMat.getDDRM().data, hMat.getDDRM().data, aSpMat.nz_values,
-            toLongArray(aSpMat.col_idx), toLongArray(aSpMat.nz_rows), bMat.getDDRM().data
+            toLongArray(gSpMat.nz_rows), cMat.ddrm.data, hMat.ddrm.data, aSpMat.nz_values,
+            toLongArray(aSpMat.col_idx), toLongArray(aSpMat.nz_rows), bMat.ddrm.data
         )
 
         // Create and set parameters
@@ -94,7 +94,7 @@ fun main() {
 
         // Get solution
         val xMat = SimpleMatrix(it.x())
-        System.out.println("xMat")
+        println("xMat")
         xMat.print()
     }
 }
