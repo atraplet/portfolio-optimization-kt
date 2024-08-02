@@ -6,13 +6,12 @@ import org.ejml.dense.row.factory.DecompositionFactory_DDRM
 import org.ejml.ops.DConvertMatrixStruct
 import org.ejml.simple.SimpleMatrix
 
+// Helper function
 fun toLongArray(arr: IntArray): LongArray {
     return arr.map { it.toLong() }.toLongArray()
 }
 
 fun main() {
-    print(Model.version())
-
     // Define portfolio optimization problem
     val mu = SimpleMatrix(doubleArrayOf(0.05, 0.06, 0.08, 0.06))
     val sigma = SimpleMatrix(
